@@ -315,4 +315,4 @@ describe 'Users data', ->
     user = @slackbot.robot.brain.data.users[@stubs.user.id]
     userperiod = @slackbot.robot.brain.data.users[@stubs.userperiod.id]
     should.equal user, null
-    should.equal userperiod, null
+    should.equal userperiod, nul
