@@ -302,3 +302,17 @@ describe 'Users data', ->
     should.equal userperiod.name, @stubs.userperiod.name
     should.equal userperiod.real_name, @stubs.userperiod.real_name
     should.equal userperiod.email_address, @stubs.userperiod.profile.email
+
+  it 'Should not load user data on error', ->
+    err =
+      ok: false
+
+    @slackbot.robot.brain.data.users[@stubs.user.id] = null
+    @slackbot.robot.brain.data.users[@stubs.userperiod.id] = null
+
+    @slackbot.loadUsers(err, @stubs.responseUsersList)
+
+    user = @slackbot.robot.brain.data.users[@stubs.user.id]
+    userperiod = @slackbot.robot.brain.data.users[@stubs.userperiod.id]
+    should.equal user, null
+    should.equal userperiod, nul

@@ -1,3 +1,6 @@
 ignore:
   - slack.coffee
   - test/*
+
+codecov:
+  token: 6d22c578-aae7-420f-976b-95995b1d8caf
